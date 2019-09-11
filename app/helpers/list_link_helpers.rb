@@ -27,7 +27,7 @@ module ListLinkHelpers
     case action
     when 'new', 'index'
       model = main_resource_or_model || controller_name.singularize.camelize.constantize
-    when 'show', 'edit', 'delete'
+    when 'show', 'edit', 'delete', 'copy'
       resource = main_resource_or_model || instance_variable_get("@#{controller_name.singularize}")
       model = resource.class
     end
